@@ -47,7 +47,7 @@ function addMovies(){
  const rating = document.getElementById('rating').value;
  const url = document.getElementById('image-url').value;
  movie={};
-  if(title==="" || +rating <= 1 || url==="" ){ 
+  if(title==="" || +rating < 1 ||+rating >5 || url==="" ){ 
       window.alert('Please Enter Valid Values !!!')
       return
   }
@@ -67,4 +67,23 @@ function clearInputs(){
  document.getElementById('title').value = "";
  document.getElementById('rating').value="";
  document.getElementById('image-url').value="";
+}
+
+function hideOrShow(){
+    if(movies.length < 1){
+        document.querySelector("main").style.display="none";
+        return false ;
+    }else{
+        document.querySelector("main").style.display="block"; 
+        return true ; 
+    }
+}
+function addmovieToList(){
+    if(hideOrShow()===true){
+        movies.array.forEach(element => {
+            newMovie=document.createElement('li');
+            newMovie.setAttribute('class','new-movie')
+            new
+        });
+    }
 }
